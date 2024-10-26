@@ -1,9 +1,9 @@
 import { SafeAreaView, View } from "react-native";
 
-export default function login(){
+export default function Home(){
     return(
         <SafeAreaView>
-            login
+            home
         </SafeAreaView>
     )
 }
