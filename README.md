@@ -54,5 +54,5 @@
 Contributions are always welcome!
 
 - Missing something or found a bug? [Report here](https://github.com/sundaram-pro/rentroll/issues). 
-- Want to contribute? Check out our contribution guide.
+- Want to contribute? Check out our [contribution guide](https://github.com/sundaram-pro/rentroll/blob/main/CONTRIBUTING.md).
 - Please adhere to this project's code of conduct
