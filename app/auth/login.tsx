@@ -1,72 +1,52 @@
-import React, { useState } from "react";
-import { SafeAreaView, View, Text, TextInput, Button, TouchableOpacity, StyleSheet } from "react-native";
+import ButtonTest from "@/components/ButtonTest";
+import { StatusBar } from "expo-status-bar";
+import { Text, View, TouchableOpacity, TextInput } from "react-native";
 
-export default function Login({ navigation }) {
-  const [phone, setPhone] = useState("");
-  const [password, setPassword] = useState("");
-
+export default function Login() {
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Login</Text>
-      
-      <TextInput
-        style={styles.input}
-        placeholder="Phone Number"
-        keyboardType="phone-pad"
-        value={phone}
-        onChangeText={setPhone}
-      />
-      
-      <TextInput
-        style={styles.input}
-        placeholder="Password"
-        secureTextEntry
-        value={password}
-        onChangeText={setPassword}
-      />
-      
-      <Button title="Login" onPress={() => { /* handle login */ }} />
-      
-      <View style={styles.linksContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate("Signup")}>
-          <Text style={styles.link}>Sign Up</Text>
+    <View className='flex-1 justify-center items-center bg-white'>
+      <StatusBar style='auto' />
+      <Text className='text-center mt-3 text-2xl font-light text-orange-300'>
+        Login
+      </Text>
+      <ButtonTest/>
+      {/* Additional components goes here */}
+      <View className='mt-5 mx-5'>
+        <View>
+          <Text className='text-gray-400'>EMAIL:</Text>
+          <TextInput
+            placeholder='Enter Email...'
+            className='border border-dotted p-2 text-gray-500 border-amber-400 mt-1'
+          />
+        </View>
+        <View className='mt-3'>
+          <Text className='text-gray-400'>PASSWORD:</Text>
+          <TextInput
+            secureTextEntry
+            placeholder='Enter Password...'
+            className='border text-gray-500 border-dotted p-2 border-amber-400 mt-1'
+          />
+        </View>
+
+        <TouchableOpacity className='bg-orange-300 p-3 mt-4'>
+          <Text className='text-center text-base text-white'>Login</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate("ForgotPassword")}>
-          <Text style={styles.link}>Forgot Password?</Text>
-        </TouchableOpacity>
+
+        <Text className='text-center font-normal text-gray-500 text-base mt-3'>
+          OR
+        </Text>
+        <View className='mt-4'>
+          <TouchableOpacity className='flex flex-row items-center justify-center p-2 bg-orange-300'>
+            <Text className='text-white mx-2 text-sm'>Sign In With Google</Text>
+          </TouchableOpacity>
+        </View>
+        <View className='mt-6 flex-row justify-center'>
+          <Text className=''>New to FreeCodeCamp? </Text>
+          <TouchableOpacity>
+            <Text className='text-amber-500'>Create an Account</Text>
+          </TouchableOpacity>
+        </View>
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    paddingHorizontal: 20,
-    backgroundColor: "#fff",
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: "bold",
-    textAlign: "center",
-    marginBottom: 20,
-  },
-  input: {
-    height: 50,
-    borderColor: "#ccc",
-    borderWidth: 1,
-    borderRadius: 5,
-    paddingHorizontal: 10,
-    marginBottom: 15,
-  },
-  linksContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginTop: 15,
-  },
-  link: {
-    color: "blue",
-    fontSize: 16,
-  },
-});

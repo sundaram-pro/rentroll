@@ -6,6 +6,7 @@ import Property from './property/property';
 import Home from './home/home';
 import Tenant from './tenant/tenant';
 import Login from './auth/login'; // Import your login screen
+import "../assets/css/global.css";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
