@@ -1,6 +1,6 @@
 import AcceptButton from '@/components/AcceptButton';
 import React, {useState} from 'react';
-import {StyleSheet, Text, SafeAreaView, TextInput} from 'react-native'
+import {StyleSheet, Text, SafeAreaView, TextInput, View} from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack';
 
 export default function Login(){
@@ -14,20 +14,20 @@ export default function Login(){
     }
 
     return(
-        <SafeAreaView>
+        <SafeAreaView className='flex-1 bg-gradient-to-b from-blue-500 to-blue-700 justify-center items-center px-6 w-full h-full'>
+            <View>
+
+            
             <Text>
                 Email id
             </Text>
-            <TextInput>
-
-            </TextInput>
+            <TextInput/>
             <Text>
                 Password
             </Text>
-            <TextInput>
-                
-            </TextInput>
+            <TextInput/>
             <AcceptButton onPress={handleSubmit} title='Login'/>
+            </View>
         </SafeAreaView>
     )
 }

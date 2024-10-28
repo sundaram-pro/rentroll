@@ -14,7 +14,7 @@ export default function SignUp(){
     }
 
     return(
-        <SafeAreaView>
+        <SafeAreaView className='flex-1 bg-gradient-to-b from-blue-500 to-blue-700 justify-center items-center px-6 w-full h-full'>
             <Text>
                 Email id
             </Text>

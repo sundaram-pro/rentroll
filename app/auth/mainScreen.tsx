@@ -22,7 +22,7 @@ export default function MainScreen() {
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-gradient-to-b from-blue-500 to-blue-700 justify-center items-center px-6 w-full h-full">
+    <SafeAreaView className="flex-1 bg-gradient-to-b from-blue-500 to-blue-700 justify-center items-center px-6 w-screen h-screen">
       {/* Decorative Plant Image */}
       <View className="mb-6">
         <ImageBackground
