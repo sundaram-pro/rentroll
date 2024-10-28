@@ -1,72 +1,33 @@
-import React, { useState } from "react";
-import { SafeAreaView, View, Text, TextInput, Button, TouchableOpacity, StyleSheet } from "react-native";
+import AcceptButton from '@/components/AcceptButton';
+import React, {useState} from 'react';
+import {StyleSheet, Text, SafeAreaView, TextInput, View} from 'react-native'
+import { createStackNavigator } from '@react-navigation/stack';
 
-export default function Login({ navigation }) {
-  const [phone, setPhone] = useState("");
-  const [password, setPassword] = useState("");
+export default function Login(){
+    
+    const Stack = createStackNavigator();
+    const [emailId, setEmailId] = useState("")
+    const [password, setpassword] = useState("")
 
-  return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Login</Text>
-      
-      <TextInput
-        style={styles.input}
-        placeholder="Phone Number"
-        keyboardType="phone-pad"
-        value={phone}
-        onChangeText={setPhone}
-      />
-      
-      <TextInput
-        style={styles.input}
-        placeholder="Password"
-        secureTextEntry
-        value={password}
-        onChangeText={setPassword}
-      />
-      
-      <Button title="Login" onPress={() => { /* handle login */ }} />
-      
-      <View style={styles.linksContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate("Signup")}>
-          <Text style={styles.link}>Sign Up</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate("ForgotPassword")}>
-          <Text style={styles.link}>Forgot Password?</Text>
-        </TouchableOpacity>
-      </View>
-    </SafeAreaView>
-  );
+    const handleSubmit = ()=>{
+
+    }
+
+    return(
+        <SafeAreaView className='flex-1 bg-gradient-to-b from-blue-500 to-blue-700 justify-center items-center px-6 w-full h-full'>
+            <View>
+
+            
+            <Text>
+                Email id
+            </Text>
+            <TextInput/>
+            <Text>
+                Password
+            </Text>
+            <TextInput/>
+            <AcceptButton onPress={handleSubmit} title='Login'/>
+            </View>
+        </SafeAreaView>
+    )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    paddingHorizontal: 20,
-    backgroundColor: "#fff",
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: "bold",
-    textAlign: "center",
-    marginBottom: 20,
-  },
-  input: {
-    height: 50,
-    borderColor: "#ccc",
-    borderWidth: 1,
-    borderRadius: 5,
-    paddingHorizontal: 10,
-    marginBottom: 15,
-  },
-  linksContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginTop: 15,
-  },
-  link: {
-    color: "blue",
-    fontSize: 16,
-  },
-});
