@@ -7,6 +7,7 @@ import Home from "./home/home";
 import Tenant from "./tenant/tenant";
 import Login from "./auth/login";
 import MainScreen from "./auth/mainScreen";
+import ForgotPassword from "./auth/forgotPassword";
 import SignUp from "./auth/signup";
 import * as SplashScreen from "expo-splash-screen";
 import * as Font from "expo-font";
@@ -105,6 +106,16 @@ export default function RootLayout() {
               component={SignUp}
               options={{ headerShown: false }}
             />
+            <Stack.Screen
+              name="ForgotPassword"
+              component={ForgotPassword}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Home"
+              component={Home}
+              options={{ headerShown: false }}
+            />
             {/* Add more authentication screens here if needed */}
           </Stack.Navigator>
         )}
@@ -146,6 +157,16 @@ export default function RootLayout() {
             <Stack.Screen
               name="SignUp"
               component={SignUp}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="ForgotPassword"
+              component={ForgotPassword}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Home"
+              component={Home}
               options={{ headerShown: false }}
             />
             {/* Add more authentication screens here if needed */}

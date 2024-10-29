@@ -2,9 +2,10 @@ import { SafeAreaView, View } from "react-native";
 
 export default function Home(){
     return(
-        <SafeAreaView>
-            home
-            <View class="bg-cyan-700">abcd</View>
+        <SafeAreaView className="flex-1 bg-gradient-to-b from-blue-500 to-blue-700 justify-center items-center px-6 w-full h-full">
+            <View className="bg-cyan-700">
+                
+            </View>
         </SafeAreaView>
     )
 }
